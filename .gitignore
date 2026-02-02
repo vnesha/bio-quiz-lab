@@ -1,0 +1,9 @@
+# Local source material (do not commit)
+_sources/
+
+# OS / editor
+.DS_Store
+*.swp
+
+# Node
+node_modules/
