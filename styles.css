@@ -55,6 +55,8 @@ body{
 .image{ border:1px solid var(--border); border-radius:12px; overflow:hidden; background:rgba(255,255,255,.02); }
 .image svg{ width:100%; height:auto; display:block; }
 
+.filters{ display:flex; gap:10px; flex-wrap:wrap; }
+
 .topic-select{
   border:1px solid var(--border);
   background: rgba(255,255,255,.03);

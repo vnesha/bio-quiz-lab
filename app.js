@@ -1,9 +1,10 @@
-import { questions, topics } from "./data/questions-bank.js";
+import { questions, topics } from "./data/questions-from-lessons.js";
 
 let idx = 0;
 let score = 0;
 let locked = false;
 let activeTopic = "Sve";
+let activeGrade = "Sve";
 let bank = [];
 
 const elQuestion = document.getElementById("question");
@@ -24,7 +25,17 @@ function shuffle(arr) {
 }
 
 function pickBank() {
-  const base = activeTopic === "Sve" ? questions : questions.filter(q => q.topic === activeTopic);
+  let base = questions;
+
+  if (activeGrade !== "Sve") {
+    const g = Number(activeGrade);
+    base = base.filter(q => Number(q.grade) === g);
+  }
+
+  if (activeTopic !== "Sve") {
+    base = base.filter(q => q.topic === activeTopic);
+  }
+
   bank = shuffle(base);
   idx = 0;
   score = 0;
@@ -287,24 +298,49 @@ function initTopicUI() {
   const quizCard = document.getElementById("quiz");
   const top = quizCard.querySelector(".quiz-top");
 
-  const sel = document.createElement("select");
-  sel.className = "topic-select";
-  const all = document.createElement("option");
-  all.value = "Sve";
-  all.textContent = "Sve oblasti";
-  sel.appendChild(all);
-  topics.forEach(t => {
+  const wrap = document.createElement("div");
+  wrap.className = "filters";
+
+  const gradeSel = document.createElement("select");
+  gradeSel.className = "topic-select";
+  ;[
+    ["Sve", "Svi razredi"],
+    ["6", "6. razred"],
+    ["7", "7. razred"],
+    ["8", "8. razred"],
+  ].forEach(([v, label]) => {
     const opt = document.createElement("option");
-    opt.value = t;
-    opt.textContent = t;
-    sel.appendChild(opt);
+    opt.value = v;
+    opt.textContent = label;
+    gradeSel.appendChild(opt);
   });
-  sel.onchange = () => {
-    activeTopic = sel.value;
+  gradeSel.onchange = () => {
+    activeGrade = gradeSel.value;
     restart();
   };
 
-  top.prepend(sel);
+  const topicSel = document.createElement("select");
+  topicSel.className = "topic-select";
+  const all = document.createElement("option");
+  all.value = "Sve";
+  all.textContent = "Sve oblasti";
+  topicSel.appendChild(all);
+  topics
+    .filter(t => t !== "Sve")
+    .forEach(t => {
+      const opt = document.createElement("option");
+      opt.value = t;
+      opt.textContent = t;
+      topicSel.appendChild(opt);
+    });
+  topicSel.onchange = () => {
+    activeTopic = topicSel.value;
+    restart();
+  };
+
+  wrap.appendChild(gradeSel);
+  wrap.appendChild(topicSel);
+  top.prepend(wrap);
 }
 
 elNext.addEventListener("click", next);
