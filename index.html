@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="sr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bio Quiz Lab</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Bio Quiz Lab</h1>
+      <p class="subtitle">Kvizovi iz biologije (osnovna škola)</p>
+    </header>
+
+    <main class="container">
+      <section class="card" id="quiz">
+        <div class="quiz-top">
+          <div class="pill" id="progress">Pitanje 1/1</div>
+          <div class="pill" id="score">Poeni: 0</div>
+        </div>
+
+        <h2 class="question" id="question">Učitavanje…</h2>
+
+        <div class="answers" id="answers"></div>
+
+        <div class="actions">
+          <button class="btn" id="next" disabled>Sledeće</button>
+          <button class="btn btn-secondary" id="restart" hidden>Restart</button>
+        </div>
+
+        <p class="hint" id="hint"></p>
+      </section>
+
+      <footer class="footer">
+        <small>Made for learning. Vanilla JS.</small>
+      </footer>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
