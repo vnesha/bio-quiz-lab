@@ -1,4 +1,4 @@
-import { questions, topics } from "./data/questions.js";
+import { questions, topics } from "./data/questions-bank.js";
 
 let idx = 0;
 let score = 0;
