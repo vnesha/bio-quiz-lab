@@ -52,6 +52,29 @@ body{
 
 .answers{ display:grid; grid-template-columns:1fr; gap:10px; }
 
+.image{ border:1px solid var(--border); border-radius:12px; overflow:hidden; background:rgba(255,255,255,.02); }
+.image svg{ width:100%; height:auto; display:block; }
+
+.topic-select{
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  padding:8px 10px;
+  border-radius:999px;
+}
+
+.order-list{ display:grid; gap:10px; margin-bottom:10px; }
+.order-row{ display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--border); border-radius:12px; background: rgba(255,255,255,.02); }
+.order-item{ color: var(--text); }
+.order-controls{ display:flex; gap:8px; }
+
+.match{ display:grid; gap:10px; margin-bottom:10px; }
+.match-row{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; padding:10px 12px; border:1px solid var(--border); border-radius:12px; background: rgba(255,255,255,.02); }
+.match-row.correct{ border-color: rgba(52,211,153,.7); }
+.match-row.wrong{ border-color: rgba(251,113,133,.7); }
+.match-left{ color: var(--text); }
+.match-select{ width:100%; border:1px solid var(--border); background: rgba(255,255,255,.03); color: var(--text); padding:10px; border-radius:12px; }
+
 .answer{
   text-align:left;
   width:100%;

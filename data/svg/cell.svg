@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-label="Šema životinjske ćelije (pojednostavljeno)">
+  <defs>
+    <style>
+      .bg{fill:#0b1220}
+      .mem{fill:#111a2e;stroke:#5eead4;stroke-width:6}
+      .nucleus{fill:#2b3550;stroke:#9fb0d0;stroke-width:4}
+      .label{font: 18px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#e7eefc}
+      .muted{fill:#9fb0d0}
+      .dot{fill:#34d399}
+      .line{stroke:#9fb0d0;stroke-width:3}
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="800" height="480" rx="24" />
+
+  <!-- Cell body -->
+  <ellipse class="mem" cx="360" cy="250" rx="260" ry="170" />
+
+  <!-- Nucleus -->
+  <circle class="nucleus" cx="300" cy="235" r="78" />
+  <circle class="dot" cx="280" cy="220" r="10" />
+
+  <!-- A few organelles (abstract) -->
+  <ellipse fill="#1c2740" cx="450" cy="220" rx="45" ry="24" />
+  <ellipse fill="#1c2740" cx="470" cy="285" rx="36" ry="20" />
+  <path d="M520 240c40 0 70 22 70 50s-30 50-70 50-70-22-70-50 30-50 70-50z" fill="#1c2740"/>
+
+  <!-- Labels -->
+  <text class="label" x="40" y="60">Životinjska ćelija (pojednostavljeno)</text>
+  <text class="label muted" x="40" y="88">Za pitanja: jezgro / membrana / citoplazma</text>
+
+  <line class="line" x1="180" y1="120" x2="255" y2="185" />
+  <text class="label" x="70" y="120">Jezgro</text>
+
+  <line class="line" x1="130" y1="340" x2="170" y2="320" />
+  <text class="label" x="40" y="360">Ćelijska membrana</text>
+
+  <line class="line" x1="620" y1="330" x2="545" y2="305" />
+  <text class="label" x="620" y="360">Citoplazma</text>
+</svg>
